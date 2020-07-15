@@ -1,6 +1,6 @@
 <div align='center'>
 
-![](src/assets/logo.png)
+![](screenshots/logo.png)
 > A banking APP created with React Native and Expo
 
 <img src="screenshots/signin.jpg" alt="GoBank SignIn" width="300">
@@ -32,7 +32,6 @@ GoBank is an app made with React Native. It mocks up a bank or payment app and u
 - [ ] Screens
   - [ ] Email verification
   - [ ] Failed payment
-  - [ ] Profile
 - [ ] Transactions
   - [ ] Filter per date
 
