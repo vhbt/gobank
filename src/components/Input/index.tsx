@@ -1,18 +1,23 @@
-import React from "react";
-import { TextInputProps } from "react-native";
+import React, { forwardRef } from 'react';
+import { TextInputProps } from 'react-native';
 
-import { Container, TextInput } from "./styles";
+import { Container, TextInput } from './styles';
 
 interface InputProps extends TextInputProps {
-  name: string;
+  error?: string | undefined;
+  extra?: React.ElementType;
 }
 
-const Input: React.FC<InputProps> = ({ name, ...rest }) => {
+const Input: React.FC<InputProps> = (
+  { error = '', extra: Extra, ...rest },
+  ref,
+) => {
   return (
-    <Container>
-      <TextInput {...rest}></TextInput>
+    <Container hasExtra={!!Extra} error={error}>
+      <TextInput hasExtra={!!Extra} {...rest} ref={ref} />
+      {Extra ? <Extra /> : null}
     </Container>
   );
 };
 
-export default Input;
+export default forwardRef(Input);
